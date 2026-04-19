@@ -68,9 +68,7 @@
 
 #### Создание Activity "Настройки" (SettingsActivity)
 
-Создаем SettingsActivity через меню File → New → Activity → Empty Activity.
-
-Разрабатываем интерфейс для выбора количества прямоугольников. Используем SeekBar для выбора числа от 1 до 10.
+Разрабатываем интерфейс для выбора количества прямоугольников. Используем SeekBar для выбора числа.
 
 </div>
 
@@ -78,21 +76,11 @@
    
 ![Разметка настроек](https://github.com/mamontoff2018-lgtm/PR-5/blob/master/Рисунок3.png)
 
-**Рисунок 3** — Разметка `activity_settings.xml` с SeekBar и TextView
+**Рисунок 3** — Разметка `activity_settings.xml`
 
 </div>
 
 Логика SettingsActivity: получаем выбранное значение и возвращаем его в MainActivity.
-
-</div>
-
-<div align="center">
-   
-![Код SettingsActivity](https://github.com/mamontoff2018-lgtm/PR-5/blob/master/Рисунок4.png)
-
-**Рисунок 4** — Логика `SettingsActivity.java` (передача данных через Intent)
-
-</div>
 
 #### Создание Activity "Об авторе" (AboutActivity)
 
@@ -102,11 +90,25 @@
 
 <div align="center">
    
-![Разметка AboutActivity](https://github.com/mamontoff2018-lgtm/PR-5/blob/master/Рисунок5.png)
+![Разметка AboutActivity](https://github.com/mamontoff2018-lgtm/PR-5/blob/master/Рисунок4.png)
 
-**Рисунок 5** — Разметка `activity_about.xml`
+**Рисунок 4** — Разметка `activity_about.xml`
 
 </div>
+
+Теперь создаем Activity "Настройки" (SettingsActivity)
+
+</div>
+
+<div align="center">
+   
+![Разметка](https://github.com/mamontoff2018-lgtm/PR-5/blob/master/Рисунок5.png)
+
+**Рисунок 5** — Разметка `SettingsActivity.kt`
+
+</div>
+
+Далее такое же создаем для Activity "Об авторе" (AboutActivity)
 
 </div>
 
@@ -114,16 +116,11 @@
    
 ![Код AboutActivity](https://github.com/mamontoff2018-lgtm/PR-5/blob/master/Рисунок6.png)
 
-**Рисунок 6** — Логика `AboutActivity.java`
+**Рисунок 6** — Логика `AboutActivity.kt`
 
 </div>
 
-#### Реализация навигации и динамического добавления прямоугольников в MainActivity
-
-В MainActivity реализуем:
-- Обработчики кнопок для перехода на SettingsActivity и AboutActivity
-- Получение результата из SettingsActivity через `onActivityResult`
-- Метод `drawRectangles(int count)` для динамического создания прямоугольников
+Реализуем получение результатов из AboutActivity и SettingsActivity в MainActivity
 
 </div>
 
@@ -131,7 +128,19 @@
    
 ![Код MainActivity часть 1](https://github.com/mamontoff2018-lgtm/PR-5/blob/master/Рисунок7.png)
 
-**Рисунок 7** — Логика `MainActivity.java` (onCreate и обработчики кнопок)
+**Рисунок 7** — Логика `MainActivity.kt` (onCreate и обработчики кнопок)
+
+</div>
+
+#### Демонстрация приложения:
+
+</div>
+
+<div align="center">
+   
+![Результат]()
+
+**Рисунок 8** — Начальный экран
 
 </div>
 
@@ -139,87 +148,34 @@
 
 <div align="center">
    
-![Код MainActivity часть 2](https://github.com/mamontoff2018-lgtm/PR-5/blob/master/Рисунок8.png)
+![Результат]()
 
-**Рисунок 8** — Логика `MainActivity.java` (onActivityResult и метод drawRectangles)
+**Рисунок 9** — вкладка об авторе
 
 </div>
-
-#### Результаты работы приложения
-
-При запуске приложения отображается главный экран с 3 прямоугольниками по умолчанию.
 
 </div>
 
 <div align="center">
    
-![Результат по умолчанию](https://github.com/mamontoff2018-lgtm/PR-5/blob/master/Рисунок9.png)
+![Результат]()
 
-**Рисунок 9** — Главный экран с 3 прямоугольниками (значение по умолчанию)
-
-</div>
-
-Нажимаем кнопку "Настройки" для перехода на экран настроек.
+**Рисунок 10** — вкладка настройки и выбора кол-ва кругов
 
 </div>
-
-<div align="center">
-   
-![Экран настроек](https://github.com/mamontoff2018-lgtm/PR-5/blob/master/Рисунок10.png)
-
-**Рисунок 10** — Экран настроек с выбором количества прямоугольников
-
-</div>
-
-Выбираем значение 7 с помощью ползунка и нажимаем "Сохранить".
 
 </div>
 
 <div align="center">
    
-![Выбор настроек](https://github.com/mamontoff2018-lgtm/PR-5/blob/master/Рисунок11.png)
+![Результат]()
 
-**Рисунок 11** — Выбор количества прямоугольников (7)
-
-</div>
-
-После сохранения автоматически возвращаемся на главный экран, где отображается 7 прямоугольников.
+**Рисунок 11** — возврат в главное меню с выбранным количеством кругов в меню
 
 </div>
 
-<div align="center">
-   
-![Результат после настроек](https://github.com/mamontoff2018-lgtm/PR-5/blob/master/Рисунок12.png)
 
-**Рисунок 12** — Главный экран после применения настроек (7 прямоугольников)
 
-</div>
-
-Нажимаем кнопку "Об авторе" для просмотра информации.
-
-</div>
-
-<div align="center">
-   
-![Экран Об авторе](https://github.com/mamontoff2018-lgtm/PR-5/blob/master/Рисунок13.png)
-
-**Рисунок 13** — Экран "Об авторе"
-
-</div>
-
-Нажимаем кнопку "Назад" для возврата на главный экран.
-
-Проверяем, что при повторном открытии приложения настройки сохраняются (используем SharedPreferences).
-
-</div>
-
-<div align="center">
-   
-![Сохранение настроек](https://github.com/mamontoff2018-lgtm/PR-5/blob/master/Рисунок14.png)
-
-**Рисунок 14** — Сохранение настроек с помощью SharedPreferences
-
-</div>
 
 ### Вывод
 В ходе выполнения практической работы №5:
