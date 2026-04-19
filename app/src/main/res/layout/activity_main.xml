@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Главный экран"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="30dp" />
+
+    <Button
+        android:id="@+id/btnSettings"
+        android:layout_width="280dp"
+        android:layout_height="70dp"
+        android:text="Настройки (кол-во кругов)"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/btnAbout"
+        android:layout_width="280dp"
+        android:layout_height="70dp"
+        android:text="Об авторе"
+        android:layout_marginBottom="40dp" />
+
+    <!-- Область для динамического отображения кругов -->
+    <LinearLayout
+        android:id="@+id/circlesContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="20dp" />
+
+</LinearLayout>
